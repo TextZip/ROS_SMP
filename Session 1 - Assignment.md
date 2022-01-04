@@ -43,16 +43,15 @@ roslaunch turtlebot3_gazebo turtlebot3_house.launch
 ```
 
 5) In the previously created package, create a service server called "**/Arda**" which can be called using an Empty message. Once called the service server has to send back a list which contains the index of the highest and lowest laser scan readings(in that order) from the turtlebot3.
-
+<!--  -->
 
 6) Create a package "**custom_service_assignment**"
 Launch the **turtlebot3_house.launch** launch file
 Optional: Create a launch file "**custom_service_launch.launch**" to start the server and client
 
 Write a **custom server**:
-request: **distance** variable: to move the turtlebot for the specified distance in Gazebo.
-response: **success** flag ( to inform if the required distance was travelled by the bot)
-**additional_message** ( to give any additional information. eg: if the bot failed to cover the distance due to an obstacle)
+- request: **distance variable** to move the turtlebot for the specified distance in Gazebo.
+- response: **success** flag ( to inform if the required distance was travelled by the bot) and  **additional_message** ( to give any additional information. eg: if the bot failed to cover the distance due to an obstacle)
 
 Your code needs to check for obstacles directly in front of the bot and stop the bot before it hits an obstacle. If the bot is stoppped, then the successs flag should be flase and an appropriate additional_message should be sent.
 (Hint: for calculating the distance use the /odom topic)
